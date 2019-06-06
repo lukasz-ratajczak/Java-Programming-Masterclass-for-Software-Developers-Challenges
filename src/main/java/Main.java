@@ -2,28 +2,25 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int con = 0;
-        int max = Integer.MIN_VALUE;
-        int min = Integer.MAX_VALUE;
-        while (con != 1) {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Enter number: ");
+        inputThenPrintSumAndAverage();
+    }
+    public static void inputThenPrintSumAndAverage(){
+        Scanner scanner = new Scanner(System.in);
+        int sum = 0, repeater = 0;
+        double average;
+        int con =0;
+        while(con==0){
             boolean isInt = scanner.hasNextInt();
-            if (isInt) {
-                int value = scanner.nextInt();
-
-                if (value > max) {
-                    max = value;
-                }
-                if (value < min) {
-                    min = value;
-                }
-
-            } else {
-                System.out.println("Invalid input");
+            if(isInt){
+                int scannedNumber = scanner.nextInt();
+                sum += scannedNumber;
+                repeater++;
+            }else{
+                average =  Math.round((double) sum / repeater);
+                int avg = (int) average;
+                System.out.println("SUM = "+sum+" AVG = "+avg);
                 con = 1;
             }
         }
-        System.out.println("Min is: " + min + " and Max is: " + max);
     }
 }
