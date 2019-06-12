@@ -7,5 +7,7 @@ public class Main {
         Dog dog = new Dog(5, 5,"Yorky", 1,4,1,20,"long silky");
 
         dog.eat();
+        dog.walk();
+        dog.run();
     }
 }
