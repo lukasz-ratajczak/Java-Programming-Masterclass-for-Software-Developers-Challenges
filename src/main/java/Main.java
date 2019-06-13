@@ -13,32 +13,34 @@ public class Main {
         System.out.println("Input:");
         System.out.println(Arrays.toString(inputArray));
 
-        System.out.println(fintMin(inputArray));
+        int[] reverseArray = reverseArray(inputArray);
+        System.out.println("Reverse:");
+        System.out.println(Arrays.toString(reverseArray));
 
     }
-    public static int fintMin(int[] inputArray){
 
-        int[] outputArray = new int[inputArray.length];
-        int[] tempArray = new int[inputArray.length];
+    public static int[] reverseArray(int[] inputArray) {
 
-        for (int j = 0; j < inputArray.length; j++) {
-            for (int i = 0; i < inputArray.length-1; i++) {
-                if(inputArray[i] > inputArray[i+1]){
-                    tempArray[i] = inputArray[i+1];
-                    inputArray[i+1] = inputArray[i];
-                    inputArray[i] = tempArray[i];
-                }
-            }
+        int[] reverseArray = new int[inputArray.length];
+        int[] tempArray = new int[reverseArray.length];
+
+
+        for (int i = 0; i <= inputArray.length / 2; i++) {
+            tempArray[i] = inputArray[i];
+            reverseArray[i] = inputArray[reverseArray.length - i - 1];
+            reverseArray[reverseArray.length - i - 1] = tempArray[i];
         }
 
-        return inputArray[0];
+
+        return reverseArray;
     }
 
-    public static void printArray(int[] arrayToPrint){
+    public static void printArray(int[] arrayToPrint) {
         for (int i1 : arrayToPrint) {
             System.out.println(i1);
         }
     }
+
     public static int[] getIntegers(int numberOfElements) {
         Scanner scanner = new Scanner(System.in);
 
