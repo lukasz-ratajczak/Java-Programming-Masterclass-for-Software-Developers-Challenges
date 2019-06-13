@@ -1,4 +1,6 @@
 import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -9,15 +11,12 @@ public class Main {
         System.out.println("Define all elements: ");
         int[] inputArray = getIntegers(numberOfElements);
         System.out.println("Input:");
-        printArray(inputArray);
+        System.out.println(Arrays.toString(inputArray));
 
-        int[] outputArray = sortArray(inputArray);
+        System.out.println(fintMin(inputArray));
 
-        System.out.println("Output:");
-        printArray(outputArray);
     }
-
-    public static int[] sortArray(int[] inputArray){
+    public static int fintMin(int[] inputArray){
 
         int[] outputArray = new int[inputArray.length];
         int[] tempArray = new int[inputArray.length];
@@ -32,7 +31,7 @@ public class Main {
             }
         }
 
-        return inputArray;
+        return inputArray[0];
     }
 
     public static void printArray(int[] arrayToPrint){
