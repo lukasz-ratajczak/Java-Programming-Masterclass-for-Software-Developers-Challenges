@@ -8,21 +8,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-        MobilePhone mobilePhone = new MobilePhone();
+        Bank bank = new Bank("ING");
 
-        mobilePhone.storeContact("Dupa", "51324124");
-        mobilePhone.storeContact("Dupa", "51324124");
-        mobilePhone.storeContact("asad", "5235135");
-        mobilePhone.storeContact("fdgdfg", "4525246246");
-        mobilePhone.storeContact("Dupasfafa", "51324124");
-        mobilePhone.storeContact("asdaffasfa", "23523523552");
+        bank.addBranch("Premium");
 
-        mobilePhone.modifyContact("fdgdfg", "4525246246");
+        bank.addCustomer("Premium", "Stefan", 500);
+        bank.addCustomer("Premium", "Borek", 1987);
+        bank.addCustomer("Premium", "Endi", 245);
 
-        mobilePhone.removeContact("Dupasfafa", "51324124");
+        bank.addCustomerTransaction("Premium", "Stefan", 500);
 
-mobilePhone.printContacts();
+        bank.listCustomers("Premium",true);
     }
-
-
 }
